@@ -5,95 +5,192 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lorento Tweak</title>
 
-
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
+*{margin:0;padding:0;box-sizing:border-box}
 
 body{
-    margin:0;
-    height:100vh;
-    overflow:hidden;
-    background:#060606;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-family:'Montserrat', sans-serif;
-    color:white;
+min-height:100vh;
+overflow-x:hidden;
+overflow-y:auto;
+display:flex;
+flex-direction:column;
+justify-content:flex-start;
+align-items:center;
+font-family:'Poppins',sans-serif;
+background:radial-gradient(circle at center,#161616 0%,#080808 50%,#000 100%);
+color:#fff;
 }
 
-
 .bg{
-    position:fixed;
-    width:100%;
-    height:100%;
-    top:0;
-    left:0;
-    z-index:-1;
-    overflow:hidden;
+position:fixed;
+inset:0;
+overflow:hidden;
+z-index:-1;
 }
 
 .cross{
-    position:absolute;
-    width:350px;
-    opacity: 0.20;;
-    animation:floatY 8s ease-in-out infinite;
-    filter:blur(1px);
+position:absolute;
+opacity:.15;
+filter:drop-shadow(0 0 15px rgba(255,255,255,.3));
+animation:floatCross 14s ease-in-out infinite,rotateCross 25s linear infinite;
 }
 
-
-@keyframes floatY{
-    0%{ transform:translateY(-40px); }
-    50%{ transform:translateY(40px); }
-    100%{ transform:translateY(-40px); }
+@keyframes floatCross{
+0%{transform:translateY(-50px)}
+50%{transform:translateY(50px)}
+100%{transform:translateY(-50px)}
 }
 
-/* بخش متن وسط */
+@keyframes rotateCross{
+from{rotate:0deg}
+to{rotate:360deg}
+}
+
 .center{
-    text-align:center;
+text-align:center;
+padding:55px 75px;
+margin-top:60px;
+background:rgba(255,255,255,.03);
+backdrop-filter:blur(20px);
+border:1px solid rgba(255,255,255,.08);
+border-radius:35px;
+box-shadow:0 0 60px rgba(255,255,255,.04), inset 0 0 25px rgba(255,255,255,.02);
+}
+
+.reze{
+width:240px;
+height:340px;
+object-fit:cover;
+border-radius:22px;
+margin-bottom:25px;
+filter:drop-shadow(0 0 25px rgba(255,255,255,.4));
+animation:rezeFloat 5s ease-in-out infinite;
+}
+
+@keyframes rezeFloat{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-15px)}
 }
 
 .title{
-    font-size:64px;
-    font-weight:800;
-    letter-spacing:2px;
-    text-shadow:
-        0 0 20px #ffffff22,
-        0 0 40px #ffffff11;
+font-size:80px;
+font-weight:700;
+letter-spacing:2px;
+background:linear-gradient(90deg,#fff,#d7d7d7,#fff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
-.telegram{
-    margin-top:15px;
-    font-size:22px;
-    font-weight:600;
-    opacity:0.85;
-}
-.id{
-    margin-top:15px;
-    font-size:22px;
-    font-weight:600;
-    opacity:0.85;
+.telegram,.id{
+margin-top:15px;
+font-size:20px;
+font-weight:500;
+opacity:.85;
 }
 
+.fortnite-section{
+padding:120px 10%;
+display:flex;
+justify-content:center;
+align-items:center;
+width:100%;
+}
 
+.fortnite-card{
+display:flex;
+gap:60px;
+align-items:center;
+background:rgba(255,255,255,.03);
+backdrop-filter:blur(20px);
+border:1px solid rgba(255,255,255,.08);
+padding:40px;
+border-radius:30px;
+max-width:1100px;
+width:100%;
+}
+
+.fortnite-img{
+width:300px;
+border-radius:20px;
+filter:grayscale(100%);
+}
+
+.fortnite-text h2{
+font-size:52px;
+margin-bottom:25px;
+}
+
+.fortnite-text p{
+font-size:22px;
+margin-bottom:12px;
+}
+
+.price{
+margin-top:30px;
+font-size:28px;
+font-weight:700;
+}
+
+@media(max-width:900px){
+.title{font-size:50px}
+.center{width:90%;padding:30px 20px}
+.reze{width:180px;height:260px}
+.fortnite-card{flex-direction:column;text-align:center}
+.fortnite-img{width:220px}
+}
 </style>
 </head>
-
 <body>
 
 <div class="bg">
-    <img src="cross.png" class="cross" style="left:5%; top:20%; animation-delay:0s;">
-    <img src="cross.png" class="cross" style="left:30%; top:65%; animation-delay:2s;">
-    <img src="cross.png" class="cross" style="left:55%; top:25%; animation-delay:4s;">
-    <img src="cross.png" class="cross" style="left:80%; top:60%; animation-delay:1s;">
+<img src="cross-transparent.png" class="cross" style="left:2%;top:8%;width:120px;">
+<img src="cross-transparent.png" class="cross" style="left:12%;top:70%;width:180px;">
+<img src="cross-transparent.png" class="cross" style="left:22%;top:35%;width:140px;">
+<img src="cross-transparent.png" class="cross" style="left:35%;top:10%;width:250px;">
+<img src="cross-transparent.png" class="cross" style="left:48%;top:82%;width:170px;">
+<img src="cross-transparent.png" class="cross" style="left:60%;top:22%;width:220px;">
+<img src="cross-transparent.png" class="cross" style="left:75%;top:65%;width:150px;">
+<img src="cross-transparent.png" class="cross" style="left:88%;top:18%;width:230px;">
+<img src="cross-transparent.png" class="cross" style="left:5%;top:45%;width:100px;">
+<img src="cross-transparent.png" class="cross" style="left:18%;top:15%;width:90px;">
+<img src="cross-transparent.png" class="cross" style="left:28%;top:60%;width:120px;">
+<img src="cross-transparent.png" class="cross" style="left:42%;top:40%;width:110px;">
+<img src="cross-transparent.png" class="cross" style="left:52%;top:5%;width:140px;">
+<img src="cross-transparent.png" class="cross" style="left:67%;top:48%;width:100px;">
+<img src="cross-transparent.png" class="cross" style="left:79%;top:82%;width:130px;">
+<img src="cross-transparent.png" class="cross" style="left:94%;top:55%;width:90px;">
 </div>
 
 <div class="center">
-    <div class="title">Lorento Tweak</div>
-    <div class="telegram">telegram : @qqLorento</div>
-    <div class="id">id : @WeGotLorento</div>
+<video class="reze" autoplay muted loop playsinline>
+<source src="girlofff.mp4" type="video/mp4">
+</video>
 
+<div class="title">Lorento Tweak</div>
+<div class="telegram">telegram id : @WeGotLorento</div>
+<div class="id">telegram channel and trust : @qqLorento</div>
 </div>
+
+<section class="fortnite-section">
+<div class="fortnite-card">
+<img src="Reze.png" class="fortnite-img">
+
+<div class="fortnite-text">
+<h2>Fortnite Tweak</h2>
+
+<p>✓ Get High FPS</p>
+<p>✓ Get More Performance In Game</p>
+<p>✓ Get Better Aim</p>
+<p>✓ Super Register Build And Ammo</p>
+
+<div class="price">
+Only 7 Dollars - 1,200 Toman
+</div>
+</div>
+</div>
+</section>
 
 </body>
 </html>
